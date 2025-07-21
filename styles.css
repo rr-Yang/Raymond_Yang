@@ -1,0 +1,74 @@
+/* Reset default margins/padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Global Styles */
+  body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+  }
+  
+  nav {
+    background: #333;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+  }
+  
+  section {
+    min-height: 100vh;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  #home {
+    /* background: url('hero-bg.jpg') center/cover; */
+    background: #2c3e50 center/cover; /* Dark fallback */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .project-card {
+    background: #f4f4f4;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem auto;
+    max-width: 600px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  input, textarea, button {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  }

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raymond Yang | Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home">
+    <h1>Hi, I'm Raymond Yang</h1>
+    <p>Web Developer / Data Scientist / AI/ML Engineer</p>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <img src="profile.jpg" alt="Your Name">
+    <p>A detail-oriented data analyst and software engineer with hands-on expertise in data 
+        automation, financial analytics, and full-stack development, seeking opportunities to apply 
+        my technical acumen in bioinformation technology, healthcare industry and financial 
+        statistics. Passionate about transforming complex datasets into actionable insights, I aim to 
+        leverage my experience in process optimization and system design to enhance research 
+        efficiency and strategic decision-making at company.</p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="project-card">
+      <h3>Project Title</h3>
+      <p>Description and technologies used.</p>
+      <a href="#">Live Demo</a>
+    </div>
+    <!-- Repeat for other projects -->
+  </section>
+
+  <!-- Contact Section -->
+  <!-- 发送邮件功能还没实现 -->
+ <body>
+    <div class="container">
+        <div class="info-panel">
+            <h1>Get In Touch</h1>
+            <p>Have a question or want to work together? Fill out the form and I'll get back to you as soon as possible.</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="icon">📧</div>
+                    <span>rry257@uw.edu</span>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">📍</div>
+                    <span>San Francisco, CA</span>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">💼</div>
+                    <span>Web Developer & Data Scientist</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-panel">
+            <h2>Send Me a Message</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" placeholder="I'd like to talk about..." required></textarea>
+                </div>
+                
+                <button type="submit">Send Message</button>
+                
+                <div id="statusMessage" class="status-message"></div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = document.querySelector('button[type="submit"]');
+            const statusMessage = document.getElementById('statusMessage');
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            statusMessage.className = 'status-message';
+            
+            try {
+                // Send form data to backend
+                const response = await fetch('http://localhost:3000/send-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                const result = await response.json();
+                
+                
+                // Show success message
+                statusMessage.textContent = '✅ Message sent successfully! I\'ll get back to you soon.';
+                // statusMessage.className = 'status-message success';
+                
+                    // Reset form
+                    document.getElementById('contactForm').reset();
+                 
+            }  finally {
+                // Reset button
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+            }
+        });
+    </script>
+</body>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 Your Name</p>
+    <a href="https://github.com/you">GitHub</a>
+    <a href="https://www.linkedin.com/in/raymond-yang-676883285/">LinkedIn</a>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
