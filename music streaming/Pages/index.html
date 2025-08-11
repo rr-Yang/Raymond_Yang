@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music | Generate your own playlist</title>
+
+  <!-- ↓ global stylesheet -->
+  <link rel="stylesheet" href="../style.css" >
+</head>
+<body>
+  <!-- ===== HEADER / NAV ===== -->
+  <header>
+    <div class="container nav-container">
+      <a class="logo" href="index.html">
+        <img src="../img/logo.png" alt="logo" />
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a class="active" href="index.html">Home</a></li>
+          <li><a href="playlist.html">Play List</a></li>
+          <li><a href="search.html">Search</a></li>
+          <li><a href="upload.html">Upload</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main>
+    <!-- hero / title -->
+    <section class="hero">
+      <h1>Music</h1>
+      <h2>Generate Your Own Playlist</h2>
+
+    </section>
+
+    <!-- generator form -->
+    <section class="section playlist-generator">
+      
+      <form id="generatorForm">
+        <label>Select the type of music you like</label>
+        <select id="genreSelect">
+          <option>Rock</option>
+          <option>Pop</option>
+          <option>Country</option>
+          <option>Jazz</option>
+        </select>
+
+        
+        <button type="submit" class="btn‑primary">Generate Your Songlist!</button>
+      </form>
+    </section>
+
+    <!-- album cards -->
+    <ul id="playlistGrid"><!-- cards injected by script.js --></ul>
+    <!-- div class="card-grid"></div>   six cards will be injected here -->
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <p>Contact Us</p>
+      <p>email music@uw.com</p>
+      <p>phone 206‑888‑8088</p>
+      <p>&copy; Music 2024</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

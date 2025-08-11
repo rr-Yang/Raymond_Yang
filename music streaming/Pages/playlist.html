@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Play List | Ranking</title>
+
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <!-- ===== HEADER / NAV (same as index, but .active on Play List) ===== -->
+  <header>
+    <div class="container nav-container">
+      <a class="logo" href="index.html">
+        <img src="../img/logo.png" alt="logo" />
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a class="active" href="playlist.html">Play List</a></li>
+          <li><a href="search.html">Search</a></li>
+          <li><a href="upload.html">Upload</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main class="ranking">
+    <aside class="ranking‑intro">
+        <h1>Ranking</h1>          <!-- put the word back -->
+            <p>Pick your<br>favorite songs</p>
+    </aside>
+
+
+    <section class="ranking‑panel">
+      <section class="filters container">
+        <label>Music genres
+          <select id="genreSelect">
+            <option value="Rock">Rock</option>
+            <option value="Pop">Pop</option>
+            <option value="Jazz">Jazz</option>
+            <option value="Country">Country</option>
+            <option value="Hip hop">Hip hop</option>
+            <option value="EDM">EDM</option>
+            <option value="Classical">Classical</option>
+            <option value="R&B">R&B</option>
+            <option value="Metal">Metal</option>
+            <option value="Indie">Indie</option>
+          </select>
+      </label>
+
+       <label>Cities
+        <select id="citySelect">
+          <option value="">— Any —</option>
+          <option value="Detroit">Detroit</option>
+          <option value="Seattle">Seattle</option>
+          <option value="New York">New York</option>
+          <option value="Los Angeles">Los Angeles</option>
+          <option value="Chicago">Chicago</option>
+        </select>
+      </label>
+
+      <div class="modes">
+        <button class="mode-btn" data-mode="top">Top 200</button>
+        <button class="mode-btn" data-mode="discovery">Discovery</button>
+        <button class="mode-btn" data-mode="mix">Mix</button>
+      </div>
+    
+     </section>
+    </section>
+  </main>
+
+  <!-- ===== RESULTS LIST ===== -->
+  <ul id="rankList" class="rank-list">
+    <!-- JS injects <li class="track-row"> here -->
+  </ul>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <p>Contact Us</p>
+      <p>email music@uw.com</p>
+      <p>phone 206‑888‑8088</p>
+      <p>&copy; Music 2024</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

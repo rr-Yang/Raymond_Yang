@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search | Music</title>
+
+  <!-- main styles -->
+  <link rel="stylesheet" href="../style.css">
+  <!-- one page‑specific rule, see bottom -->
+  <style>
+    .search-box {min-width: 370px; max-width:540px;margin:0 auto 2rem;position:relative;}
+    .search-box input{
+      width:100%;padding:0.9rem 1rem;border-radius:4px;border:none;
+      font-size:1rem;
+    }
+    .search-box button{
+      position:absolute;right:4px;top:4px;bottom:4px;
+      width:44px;border:none;background:var(--accent);border-radius:4px;
+      /*search icon */
+      background:url("../img/search‑icon.svg") center/20px 20px no-repeat,var(--accent);
+      cursor:pointer;
+    }
+    /* results list */
+    .result-list{list-style:none;margin:0;padding:0;display:grid;gap:1rem;}
+    .result{background:rgba(255,255,255,.45);display:grid;
+      grid-template-columns:56px 1fr 40px;align-items:center;
+      padding:.45rem .8rem;border-radius:4px;}
+    .result img{width:48px;height:48px;object-fit:cover;border-radius:4px;}
+    .result .meta{display:flex;flex-direction:column;font-size:.9rem;}
+    .result .title{font-weight:600}
+    .result .artist{font-size:.8rem;color:#123}
+    .result .play{width:28px;height:28px;background:url("../img/play-icon.svg") center/20px no-repeat,var(--accent);
+      border:none;border-radius:50%;cursor:pointer;}
+  </style>
+</head>
+
+<body>
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="container nav-container">
+      <a class="logo" href="../index.html"><img src="../img/logo.png" alt="logo"/></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="playlist.html">Play List</a></li>
+          <li><a class="active" href="search.html">Search</a></li>
+          <li><a href="upload.html">Upload</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main class="ranking"><!-- reuse flex two‑column shell -->
+    <aside class="ranking‑intro">
+      <h1>Search</h1>
+      <p>Find songs<br>or artists</p>
+    </aside>
+
+    <section class="ranking‑panel">
+      <!-- search input -->
+      <form id="searchForm" class="search-box">
+        <input id="query" type="text" placeholder="Search for songs, artists…" required />
+        <button type="submit"></button>
+      </form>
+
+      <!-- results (initially empty) -->
+      <ul id="results" class="result-list">
+        <!-- JS will inject <li class="result"> … </li> here -->
+      </ul>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <p>Contact Us</p>
+      <p>email music@uw.com</p>
+      <p>phone 206‑888‑8088</p>
+      <p>&copy; Music 2024</p>
+    </div>
+  </footer>
+
+  <!-- search.js -->
+  <script src="../script.js"></script>
+
+</body>
+</html>
