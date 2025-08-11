@@ -7,13 +7,5 @@ A desktop chess application with AI opponent support. Human players compete agai
 - **AI powered by a Python-trained model**, offering configurable difficulty.
 - **Game recording** logs board states for later training and analysis.
 
-## Table of Contents
-- [Installation](#installation)
-- [Launching the GUI](#launching-the-gui)
-- [AI Configuration](#ai-configuration)
-- [Recording Games](#recording-games)
-- [Project Structure](#project-structure)
-- [Training the AI](#training-the-ai)
-- [License](#license)
 
 
