@@ -1,0 +1,314 @@
+/* ───────── VARIABLES ───────── */
+:root {
+  --blue‑dark: #0072c6;
+  --blue‑light: #8dd7ff;
+  --gradient‑bg: linear-gradient(135deg, var(--blue‑dark), #f7f9fa);
+  --max‑w: 1200px;
+  --text‑light: #ffffff;
+  --text‑dark: #0d0d0d;
+  --accent: #0099ff;
+  --radius: 4px;
+}
+
+/* reset tiny bits */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--gradient‑bg);
+  color: var(--text‑dark);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0.4em 0;
+  text-align: center;
+  color: var(--blue‑dark);
+}
+
+
+.container {
+  max-width: var(--max‑w);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ───────── NAV ───────── */
+header {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--blue‑dark);
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  opacity: 0.7;
+}
+
+/* ───────── HERO ───────── */
+.hero {
+  padding: 3rem 1rem 2rem;
+}
+
+.hero h1,h2 {
+  font-size: 3rem;
+  color:black;
+}
+
+.hero p {
+  margin-top: 0;
+  color: var(--blue‑dark);
+}
+
+/* ───────── SECTIONS ───────── */
+.section {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+/* ───────── FORM ───────── */
+form {
+  display: grid;
+  gap: 1.25rem;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+select,
+button {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: var(--radius);
+  border: 1px solid #ced4da;
+}
+
+.btn‑primary,
+.btn‑secondary {
+  border: none;
+  cursor: pointer;
+  color: var(--text‑light);
+  background: var(--accent);
+  transition: opacity 0.2s;
+}
+button:hover {
+  opacity: 0.85;
+}
+
+/* ───────── CARD GRID ───────── */
+.card‑grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  max-width: var(--max‑w);
+  margin: 2rem auto 0;
+}
+
+/* === index.html cards ================================================= */
+#playlistGrid{
+  display: grid;
+  grid-template-columns: repeat(3, 210px);   /* three columns */
+  grid-auto-rows:   310px;                   /* two rows = 6 cards   */
+  gap: 2rem;                                 /* space between cards  */
+
+  justify-content: center;   /* centre the whole grid horizontally   */
+  margin: 3rem auto;          /* keeps equal left‑ / right‑distance  */
+  max-width: calc(3*210px + 2*2rem); /* so the grid never gets wider */
+  list-style: none;           /* because cards are <li> elements     */
+  padding: 0;
+} 
+
+
+.card {
+  width: 210px;               /* overall card width  – adjust to taste */
+  border-radius: .5rem;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 8px rgb(0 0 0 / .15);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* cover image */
+.card img {
+  width: 100%;                /* fill card width   */
+  height: 210px;              /* fixed height      */
+  object-fit: cover;          /* crop / keep ratio */
+}
+
+
+.card h3 {
+  margin: 1rem 0 0.5rem;
+}
+
+.card .sub {
+  margin: 0;
+  color: #555;
+}
+
+.card button {
+  margin: 1rem;
+  margin-top: auto;
+}
+
+/* ───────── FOOTER ───────── */
+footer {
+  margin-top: 4rem;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--blue‑dark);
+}
+
+/* ────────────────────── PLAYlist.html PAGE EXTRAS ────────────────────── */
+
+/* ─── ranking heading styles ───────────────────────────────────── */
+.ranking‑intro h1 {
+  color: #000;          
+  margin: 0 0 0.25rem;  
+  font-weight: 700;
+  text-align: left;     
+}
+
+.ranking‑intro p {
+  text-align: left;    
+}
+
+
+.ranking {                      /* whole area (intro + panel) */
+  display: flex;
+  gap: 3rem;
+  padding: 2.5rem 2rem;
+}
+
+.ranking‑intro {                /* left column */
+  width: 220px;                 /* fixed so right area lines up */
+  flex-shrink: 0;
+}
+
+.filters-row {                  /* top controls bar */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1.5rem 2.5rem;           /* row gap 1.5, column gap 2.5 */
+  margin-bottom: 1.75rem;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.8rem;
+  color: #e8f3ff;               /* subtle label tint */
+}
+
+/* keep selects same width for neat columns */
+.field select {
+  min-width: 160px;
+  padding-right: 32px;          /* room for chevron */
+}
+
+/* button strip right‑aligned no matter wrap */
+.btn-cluster {
+  margin-left: auto;            /* push cluster to far right */
+  display: flex;
+  gap: 0.4rem;
+}
+
+/* unified pill size */
+button.small {
+  padding: 0.45rem 1.15rem;
+  font-size: 1.2rem;
+  border-radius: var(--radius);
+}
+
+/* keep each track bar full width and centered */
+.track‑list {
+  max-width: 1120px;
+  margin-inline: 0;             /* align to left of panel */
+}
+
+
+.track {
+  background: rgba(255,255,255,0.45);
+  display: grid;
+  grid-template-columns: 56px 1fr 40px;
+  align-items: center;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius);
+}
+
+.track img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.track .meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-size: 0.9rem;
+}
+
+.track .title   { font-weight: 600; }
+.track .artist  { color: #123; font-size: 0.8rem; }
+
+/* play icon button */
+.track .play {
+  width: 28px;
+  height: 28px;
+  background: url("img/play-icon.svg") center/20px 20px no-repeat,
+              var(--accent);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.track .play:hover { opacity: 0.8; }
+
+/* ─── search page ─────────────────────── */
+#results { max-width: 760px; margin-inline: 0; }
+.result { transition: background 0.15s; }
+.result:hover { background: rgba(255,255,255,.55); }
+
+/*upload page*/
+.track-table .play{
+  width: 26px; height: 26px; border:none; border-radius:50%;
+  background: url("../img/play-icon.svg") center/16px no-repeat, var(--accent);
+  cursor:pointer;
+}
+.track-table .play:hover{opacity:.8}
+.track-table .remove{margin-left:.7rem;color:var(--accent);cursor:pointer}
+
+

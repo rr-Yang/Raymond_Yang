@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upload | Manage Tracks</title>
+
+  <!-- global stylesheet -->
+  <link rel="stylesheet" href="../style.css" />
+  
+  
+  
+
+
+  <!-- page‑specific tweaks -->
+  <style>
+    /* page banner */
+    .banner {
+      text-align: center;
+      padding: 3.5rem 1rem 1rem;
+      color: var(--accent-dark, #0582e3);
+    }
+    .banner h1 { font-size: 3rem; margin: 0 0 .25rem; }
+    .banner p  { font-size: .9rem; opacity: .8; }
+
+    /* upload button */
+    .upload-btn {
+      display:block; margin:0 auto 2rem;
+      background: var(--accent); color:#fff;
+      border:none; border-radius:4px;
+      padding: .8rem 0; width:60%;
+      font-weight:600; cursor:pointer;
+    }
+
+    /* track table */
+    .track-table {
+      width: 60%; margin: 0 auto; border-collapse: collapse;
+      box-shadow: 0 0 4px rgba(0,0,0,.06);
+      background: rgba(255,255,255,.65);
+    }
+    .track-table thead {
+      background: rgba(0,0,0,.12);
+      font-weight:600; text-align: left;
+    }
+    .track-table th, .track-table td { padding: .9rem .6rem; }
+    .track-table tbody tr:not(:last-child) { border-bottom: 1px solid rgba(0,0,0,.08); }
+
+    .track-table td img {
+      width: 60px; height: 60px; object-fit: cover; border-radius:4px;
+    }
+    .track-table .actions a { color: var(--accent); margin-left:.7rem; }
+
+    /* responsive */
+    @media (max-width: 768px) {
+      .track-table, .upload-btn { width: 90%; }
+      .banner h1 { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ===== HEADER / NAV (same as other pages) ===== -->
+  <header>
+    <div class="container nav-container">
+      <a class="logo" href="../index.html"><img src="../img/logo.png" alt="logo" /></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="playlist.html">Play List</a></li>
+          <li><a href="search.html">Search</a></li>
+          <li><a class="active" href="upload.html">Upload</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== PAGE BANNER ===== -->
+  <section class="banner">
+    <h1>Manage Your Tracks</h1>
+    <p>The perfect distribution management system for artist</p>
+  </section>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main>
+    <!-- === Upload button & hidden file input === -->
+   
+    <button id="btnBrowse" class="upload-btn">Upload a Track</button>
+    <input  id="filePicker" type="file" accept="audio/*" hidden>
+
+
+    <!-- === Track table === -->
+    <table class="track-table">
+      <thead>
+        <tr>
+          <th>Album</th>
+          <th>Streams</th>
+          <th>Artist</th>
+          <th>Title</th>
+          <th>Publish Date</th>
+          <th class="actions">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="trackBody">
+        
+       
+       
+      </tbody>
+    </table>
+
+
+    
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <p>Contact Us</p>
+      <p>email music@uw.com</p>
+      <p>phone 206‑888‑8088</p>
+      <p>&copy; Music 2022</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>   
+
+</body>
+</html>
