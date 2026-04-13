@@ -1,8 +1,9 @@
-# 👨‍💻 Raymond Yang — Coding Projects
+# 👨‍💻 Raymond Yang Coding Repository
 
 A collection of data science, machine learning, and web development projects.
 
-🌐 **Portfolio:** [https://rr-yang.github.io/Raymond_Yang](https://rr-yang.github.io/Raymond_Yang)
+## Summary
+Data Science professional with 4 years hands-on experience spanning financial BI, data engineering, and predictive analytics. Proven ability to design end-to-end data solutions — from building Snowflake data marts and Databricks pipelines to delivering Power BI dashboards and executive-ready insights — across industries including biomedical research and logistics. Skilled in Python, SQL, and ML frameworks (Scikit-learn, XGBoost, TensorFlow) with a track record of automating workflows, cutting operational costs, and translating complex data into actionable recommendations for non-technical stakeholders. Equally comfortable working cross-functionally with scientists, product teams, and leadership as architecting backend pipelines and running A/B and predictive analyses.
 
 ---
 
