@@ -12,7 +12,7 @@ if (location.pathname.includes('search.html')) {
         <span class="title">${title}</span>
         <span class="artist">${artist}</span>
       </div>
-      <button class="play" data-preview="${preview}"></button>
+      <button class="play-btn" data-preview="${preview}" aria-label="play"></button>
     </li>`;
 
   // click‑to‑play preview
