@@ -2,7 +2,7 @@
 
 A front-end music streaming web application built with vanilla HTML, CSS, and JavaScript. Powered by the iTunes Search API — no back-end or API key required.
 
-🌐 **Live Site:** [https://rr-yang.github.io/Raymond_Yang/music%20streaming/index.html](https://rr-yang.github.io/Raymond_Yang/music%20streaming/index.html)
+🌐 **Live Site:** [https://rr-yang.github.io/Raymond_Yang/music%20streaming/Pages/index.html)
 
 ---
 
